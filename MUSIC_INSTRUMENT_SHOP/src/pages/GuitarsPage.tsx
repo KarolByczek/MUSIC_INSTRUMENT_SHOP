@@ -1,4 +1,4 @@
-import '../HomePage.scss'
+
 
 function GuitarsSection() {
 

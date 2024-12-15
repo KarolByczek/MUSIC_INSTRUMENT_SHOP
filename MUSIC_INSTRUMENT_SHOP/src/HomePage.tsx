@@ -17,6 +17,9 @@ function HomePage() {
       <Link className="link" to="drums">
         <div className="menu_link">Go to drums page.</div>
       </Link>
+      <Link className="link" to="keyboards">
+        <div className="menu_link">Go to keyboards page.</div>
+      </Link>
     </>
   )
 }

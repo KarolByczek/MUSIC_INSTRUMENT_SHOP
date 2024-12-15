@@ -9,7 +9,10 @@ function HomePage() {
       THE SHOP
      </h1>
      <Link className="link" to="guitars">
-        <div className="guitars_link">Go to guitars page.</div>
+        <div className="menu_link">Go to guitars page.</div>
+      </Link>
+      <Link className="link" to="saxophones">
+        <div className="menu_link">Go to saxophones page.</div>
       </Link>
     </>
   )

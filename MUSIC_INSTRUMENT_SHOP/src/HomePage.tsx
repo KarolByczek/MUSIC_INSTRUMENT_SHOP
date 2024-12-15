@@ -14,6 +14,9 @@ function HomePage() {
       <Link className="link" to="saxophones">
         <div className="menu_link">Go to saxophones page.</div>
       </Link>
+      <Link className="link" to="drums">
+        <div className="menu_link">Go to drums page.</div>
+      </Link>
     </>
   )
 }

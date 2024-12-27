@@ -4,8 +4,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(219, 84, 84, 0.87);
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -73,12 +73,30 @@ button:focus-visible {
 .main_menu {
   position: absolute;
   left: 2rem;
-  top: 2rem;
+  top: 3.5rem;
 }
 
 .main_menu ul {
 display: flex;
 flex-direction: row;
-gap: 1rem;
+gap: 0rem;
 list-style-type: none;
+background-color: #6c6e90;
+padding-left: 0;
+}
+
+.main_menu ul .link {
+  margin-left: 0.5rem;
+}
+
+.company_icon {
+  position: absolute;
+  top: 0.5rem;
+  left: auto;
+  right: auto;
+}
+
+.company_icon_image img {
+  width: 5rem;
+
 }

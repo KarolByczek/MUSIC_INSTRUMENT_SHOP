@@ -16,7 +16,6 @@ const Menu = () => {
                 <Link className="link" to="/keyboards">
                     <div className="menu_link">KEYBOARDS</div>
                 </Link>
-                <li>TRUMBTONES</li>
             </ul>
         </div>
     )

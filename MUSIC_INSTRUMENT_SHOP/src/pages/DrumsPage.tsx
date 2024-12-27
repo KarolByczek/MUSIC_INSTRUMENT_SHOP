@@ -1,9 +1,11 @@
+import CompanyIcon from "../components/CompanyIcon"
 import Menu from "../components/Menu"
 
 
 const DrumsPage = () => {
   return (
     <>
+    <CompanyIcon/>
     <Menu/>
       <h1>
         DRUMS SECTION

@@ -1,5 +1,5 @@
-import CompanyIcon from "../components/CompanyIcon"
-import Menu from "../components/Menu"
+import CompanyIcon from "../components/CompanyIcon";
+import Menu from "../components/Menu";
 
 
 const KeyboardsPage = () => {

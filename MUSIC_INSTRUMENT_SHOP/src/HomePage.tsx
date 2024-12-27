@@ -1,3 +1,4 @@
+import Menu from './components/Menu';
 import './HomePage.scss';
 import { Link } from "react-router-dom";
 
@@ -5,6 +6,7 @@ function HomePage() {
 
   return (
     <>
+    <Menu/>
      <h1>
       THE SHOP
      </h1>

@@ -69,3 +69,16 @@ button:focus-visible {
   background-color: rgb(228, 207, 207);
   color: #1a1a1a;
 }
+
+.main_menu {
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+}
+
+.main_menu ul {
+display: flex;
+flex-direction: row;
+gap: 1rem;
+list-style-type: none;
+}

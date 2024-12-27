@@ -3,10 +3,10 @@
 const DrumsPage = () => {
   return (
     <>
-    <h1>
-     DRUMS SECTION
-    </h1>
-   </>
+      <h1>
+        DRUMS SECTION
+      </h1>
+    </>
   )
 }
 

@@ -6,11 +6,17 @@ function HomePage() {
 
   return (
     <>
-    <CompanyIcon/>
-    <Menu/>
-     <h1>
-      THE SHOP
-     </h1>
+      <head>
+        <title>HOME PAGE</title>
+      </head>
+      <body>
+        <CompanyIcon />
+        <Menu />
+        <h1>
+          THE SHOP
+        </h1>
+      </body>
+
     </>
   )
 }

@@ -5,11 +5,16 @@ import Menu from "../components/Menu";
 const DrumsPage = () => {
   return (
     <>
-    <CompanyIcon/>
-    <Menu/>
-      <h1>
-        DRUMS SECTION
-      </h1>
+      <head>
+        <title>DRUMS SECTION</title>
+      </head>
+      <body>
+        <CompanyIcon />
+        <Menu />
+        <h1>
+          DRUMS SECTION
+        </h1>
+      </body>
     </>
   )
 }

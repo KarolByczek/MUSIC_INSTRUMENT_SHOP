@@ -5,12 +5,18 @@ import Menu from "../components/Menu";
 const KeyboardsPage = () => {
   return (
     <>
-    <CompanyIcon/>
-    <Menu/>
-    <h1>
-     KEYBOARDS SECTION
-    </h1>
-   </>
+      <head>
+        <title>KEYBORDS SECTION</title>
+      </head>
+      <body>
+        <CompanyIcon />
+        <Menu />
+        <h1>
+          KEYBOARDS SECTION
+        </h1>
+      </body>
+
+    </>
   )
 }
 

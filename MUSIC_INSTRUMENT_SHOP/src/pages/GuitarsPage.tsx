@@ -1,4 +1,5 @@
 import CompanyIcon from "../components/CompanyIcon";
+import HeadStrip from "../components/HeadStrip";
 import Menu from "../components/Menu";
 
 
@@ -10,6 +11,7 @@ function GuitarsSection() {
         <title>GUITARS SECTION</title>
       </head>
       <body>
+        <HeadStrip />
         <CompanyIcon />
         <Menu />
         <h1>

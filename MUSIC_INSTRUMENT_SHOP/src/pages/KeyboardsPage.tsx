@@ -1,4 +1,5 @@
 import CompanyIcon from "../components/CompanyIcon";
+import HeadStrip from "../components/HeadStrip";
 import Menu from "../components/Menu";
 
 
@@ -9,6 +10,7 @@ const KeyboardsPage = () => {
         <title>KEYBORDS SECTION</title>
       </head>
       <body>
+        <HeadStrip />
         <CompanyIcon />
         <Menu />
         <h1>

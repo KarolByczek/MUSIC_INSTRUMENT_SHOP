@@ -108,8 +108,9 @@ h1 {
 .headstrip .middle_subimage {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   height: 100%;
+  gap: 1rem;
 }
 
 .headstrip .middle_subimage img {
@@ -117,7 +118,17 @@ h1 {
   width: auto;
 }
 
+.headstrip .middle_subimage p {
+  font-weight: 700;
+}
+
 .headstrip .right_subimage {
   width: 12%;
+}
+
+.buy_bestsellers {
+  height: 70%;
+  border-radius: 5rem;
+  align-self: center;
 }
 

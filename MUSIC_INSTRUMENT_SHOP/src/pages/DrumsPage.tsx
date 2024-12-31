@@ -1,3 +1,4 @@
+
 import CompanyIcon from "../components/CompanyIcon";
 import Menu from "../components/Menu";
 

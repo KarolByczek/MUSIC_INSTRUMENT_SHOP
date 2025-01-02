@@ -1,4 +1,4 @@
-import CompanyIcon from './components/CompanyIcon';
+import CompanyStrip from './components/CompanyStrip';
 import HeadStrip from './components/HeadStrip';
 import Menu from './components/Menu';
 
@@ -12,7 +12,7 @@ function HomePage() {
       </head>
       <body>
         <HeadStrip />
-        <CompanyIcon />
+        <CompanyStrip />
         <Menu />
         <h1>
           THE SHOP

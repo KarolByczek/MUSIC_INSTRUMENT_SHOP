@@ -44,12 +44,6 @@ body {
   }
 }
 
-.main_menu {
-  position: absolute;
-  left: 2rem;
-  top: 4rem;
-}
-
 .main_menu ul {
   display: flex;
   flex-direction: row;
@@ -57,6 +51,7 @@ body {
   list-style-type: none;
   background-color: #6c6e90;
   padding-left: 0;
+  margin: 0;
 }
 
 .main_menu ul .link {
@@ -70,13 +65,40 @@ body {
 }
 
 
-.company_icon {
+.company_strip {
   display: flex;
-  justify-self: center;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
 }
 
-.company_icon_image img {
+.company_strip .company_substrip a {
+  color: #1a1a1a;
+  margin: 0 1rem
+}
+
+.company_substrip_left {
+  display: flex;
+  justify-content: left;
+  margin-left: 2rem;
+  width: 30%;
+}
+
+.company_substrip_right {
+  display: flex;
+  justify-content: right;
+  margin-right: 2rem;
+  width: 30%;
+ 
+}
+
+.company_strip .company_icon {
+  height: 100%;
+}
+
+.company_strip .company_icon .company_icon_image {
   width: 5rem;
+  height: 100%;
 }
 
 h1 {

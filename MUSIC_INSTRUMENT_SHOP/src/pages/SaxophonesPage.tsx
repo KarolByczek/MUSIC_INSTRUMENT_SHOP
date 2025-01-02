@@ -1,4 +1,4 @@
-import CompanyIcon from "../components/CompanyIcon";
+import CompanyStrip from "../components/CompanyStrip";
 import HeadStrip from "../components/HeadStrip";
 import Menu from "../components/Menu";
 
@@ -11,7 +11,7 @@ const SaxophonesPage = () => {
       </head>
       <body>
         <HeadStrip />
-        <CompanyIcon />
+        <CompanyStrip />
         <Menu />
         <h1>
           SAXOPHONES SECTION

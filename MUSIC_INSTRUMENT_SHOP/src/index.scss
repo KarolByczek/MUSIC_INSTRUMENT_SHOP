@@ -92,7 +92,7 @@ h1 {
   top: 0;
   width: 100%;
   height: 4rem;
-  background-color: rgb(31, 90, 31);
+  background-image: url(src/assets/blue-background.jpg);
   display: flex;
   justify-content: space-between;
 }
@@ -114,17 +114,17 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-right: 1px solid green;
+  opacity: 80%;
 }
 
 .headstrip .left_subimage_container::after {
   content: '';
   position: absolute;
   top: -20%;
-  right: -10%;
+  right: -8%;
   width: 20%;
   /* Adjust width for the blurry side */
-  height: 140%;
+  height: 160%;
   background: inherit;
   /* Copy the background from the container */
   filter: blur(8px);
@@ -160,13 +160,14 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 80%;
 }
 
 .headstrip .right_subimage_container::after {
   content: '';
   position: absolute;
   top: -20%;
-  left: -10%;
+  left: -8%;
   width: 20%;
   /* Adjust width for the blurry side */
   height: 160%;

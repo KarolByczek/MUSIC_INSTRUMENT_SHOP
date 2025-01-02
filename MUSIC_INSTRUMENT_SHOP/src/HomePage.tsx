@@ -17,11 +17,7 @@ function HomePage() {
         <h1>
           THE SHOP
         </h1>
-        <div className="image-container">
-          <img src="src/assets/instrument-user-bckg01.jpg" alt="Sample Image" />
-        </div>
       </body>
-
     </>
   )
 }

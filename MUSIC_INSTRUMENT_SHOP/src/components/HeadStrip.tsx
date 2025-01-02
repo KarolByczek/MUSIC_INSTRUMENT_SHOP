@@ -14,7 +14,9 @@ const HeadStrip = () => {
         </p>
         <Button className='buy_bestsellers' buttonContent='Buy Now ->' />
       </div>
-      <img className='headstrip_subimage right_subimage' src="src/assets/instrument-user-bckg02.jpg" alt="An image of an instrument user." />
+      <div className='right_subimage_container'>
+        <img className='headstrip_subimage right_subimage' src="src/assets/instrument-user-bckg02.jpg" alt="An image of an instrument user." />
+      </div>
     </div>
   )
 }

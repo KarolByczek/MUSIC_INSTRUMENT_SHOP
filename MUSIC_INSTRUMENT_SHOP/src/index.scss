@@ -254,6 +254,11 @@ h1 {
   color: #1a1a1a;
 }
 
-.fx-icon {
-  color: #1a1a1a;
+.cart_image {
+  width: 2rem;
+  height: auto;
+}
+
+.cart_image:hover {
+  filter: invert(30%) sepia(80%) saturate(300%) hue-rotate(200deg);
 }

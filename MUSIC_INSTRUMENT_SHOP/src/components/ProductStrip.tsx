@@ -16,10 +16,7 @@ const ProductStrip = () => {
             <div className='product_substrip product_substrip_right'>
                 <a href="">EN - &#163;</a>
                 <a href="https://www.thomann.co.uk/mythomann.html" aria-label="Customer Centre" aria-owns="fx-flyin-customer" aria-expanded="false" role="button">
-                    <svg className="fx-icon fx-icon-heart user-navigation__icon fx-size--md2-lg">
-                        <title>wishlist</title>
-                        <use xlinkHref="src/assets/cart.svg"></use>
-                    </svg>
+                    <img className='cart_image' src="src/assets/react.svg" alt="React Icon" />
                 </a>
                 <a href="">&hearts;</a>
                 <a href="">&#x1f6d2;</a>

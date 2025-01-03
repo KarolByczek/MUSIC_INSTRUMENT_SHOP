@@ -260,5 +260,9 @@ h1 {
 }
 
 .cart_image:hover {
-  filter: invert(30%) sepia(80%) saturate(300%) hue-rotate(200deg);
+  filter: invert(30%) sepia(50%) saturate(100%) hue-rotate(200deg);
+}
+
+.react-icon:hover path {
+  fill: #870c1e;
 }

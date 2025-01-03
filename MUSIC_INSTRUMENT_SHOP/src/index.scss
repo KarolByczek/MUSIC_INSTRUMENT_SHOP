@@ -172,6 +172,8 @@ h1 {
 
 .headstrip .middle_subimage p {
   font-weight: 700;
+  font-size: larger;
+  color: aliceblue;
 }
 
 .headstrip .right_subimage_container {
@@ -217,4 +219,41 @@ h1 {
 .buy_now:hover {
   background-color: gainsboro;
   cursor: pointer;
+}
+
+.product_strip {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product_strip .product_substrip {
+  display: flex;
+  width: 30%;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+  color: #1a1a1a;
+}
+
+.product_strip .product_substrip.product_substrip_left {
+  justify-content: left;
+  margin-left: 2rem;
+  padding: 0 1rem;
+}
+
+.product_strip .product_substrip.product_substrip_middle {
+  justify-content: center;
+}
+
+.product_strip .product_substrip.product_substrip_right {
+  justify-content: right;
+  margin-right: 2rem;
+  padding: 0 1rem;
+}
+
+.product_strip .product_substrip a {
+  color: #1a1a1a;
+}
+
+.fx-icon {
+  color: #1a1a1a;
 }

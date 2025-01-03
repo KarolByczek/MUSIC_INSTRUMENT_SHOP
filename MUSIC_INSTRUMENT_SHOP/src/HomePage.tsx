@@ -1,6 +1,7 @@
 import CompanyStrip from './components/CompanyStrip';
 import HeadStrip from './components/HeadStrip';
 import Menu from './components/Menu';
+import ProductStrip from './components/ProductStrip';
 
 
 function HomePage() {
@@ -13,6 +14,7 @@ function HomePage() {
       <body>
         <HeadStrip />
         <CompanyStrip />
+        <ProductStrip />
         <Menu />
         <h1>
           THE SHOP

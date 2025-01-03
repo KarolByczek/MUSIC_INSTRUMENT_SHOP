@@ -1,6 +1,7 @@
 import CompanyStrip from "../components/CompanyStrip";
 import HeadStrip from "../components/HeadStrip";
 import Menu from "../components/Menu";
+import ProductStrip from "../components/ProductStrip";
 
 
 const KeyboardsPage = () => {
@@ -12,6 +13,7 @@ const KeyboardsPage = () => {
       <body>
         <HeadStrip />
         <CompanyStrip />
+        <ProductStrip />
         <Menu />
         <h1>
           KEYBOARDS SECTION

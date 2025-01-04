@@ -236,19 +236,21 @@ h1 {
 
 .product_strip .product_substrip.product_substrip_left {
   justify-content: left;
+  align-items: center;
   margin-left: 2rem;
   padding: 0 1rem;
 }
 
 .product_strip .product_substrip.product_substrip_middle {
   justify-content: center;
+  padding: 0.5rem;
 }
 
 .product_strip .product_substrip.product_substrip_right {
   justify-content: right;
   align-items: center;
   margin-right: 2rem;
-  padding: 0 1rem;
+  padding: 1rem;
 }
 
 .product_strip .product_substrip.product_substrip_right a.nationality-currency {
@@ -291,21 +293,34 @@ h1 {
   fill: #535bf2;
 }
 
-.cart_image {
+.product_strip .product_substrip.product_substrip_right a.wish-list {
+  display: flex;
+  align-items: center;
+}
+
+.product_strip .product_substrip.product_substrip_right a.wish-list svg {
+  height: 2rem;
   width: 2rem;
-  height: auto;
 }
 
-
-.react-icon:hover path {
-  fill: #870c1e;
+.product_strip .product_substrip.product_substrip_right a.wish-list svg:hover path {
+  fill: #535bf2;;
 }
 
-.cart-icon {
-  width: 3.5rem;
-  height: auto;
+.product_strip .product_substrip.product_substrip_right a.shopping-cart {
+  display: flex;
+  align-items: center;
 }
 
-.cart-icon:hover path {
-  fill: blue;
+.product_strip .product_substrip.product_substrip_right a.shopping-cart svg {
+  height: 2rem;
+  width: 2rem;
+}
+
+.product_strip .product_substrip.product_substrip_right a.shopping-cart svg:hover path {
+  fill: #535bf2;;
+}
+
+.product_strip .product_substrip.product_substrip_right a.shopping-cart svg:hover circle {
+  fill: #535bf2;;
 }

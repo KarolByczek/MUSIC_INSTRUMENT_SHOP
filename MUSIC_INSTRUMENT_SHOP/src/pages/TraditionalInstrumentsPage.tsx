@@ -3,12 +3,11 @@ import HeadStrip from "../components/HeadStrip";
 import Menu from "../components/Menu";
 import ProductStrip from "../components/ProductStrip";
 
-
-const SaxophonesPage = () => {
+const TraditionalInstrumentsPage = () => {
   return (
-    <>
+    <div>
       <head>
-        <title>SAXOPHONES SECTION</title>
+        <title>TRADITIONAL INSTRUMENTS PAGE</title>
       </head>
       <body>
         <HeadStrip />
@@ -16,11 +15,11 @@ const SaxophonesPage = () => {
         <ProductStrip />
         <Menu />
         <h1>
-          SAXOPHONES SECTION
+            TRADITIONAL INSTRUMENTS PAGE
         </h1>
       </body>
-    </>
+    </div>
   )
 }
 
-export default SaxophonesPage
+export default TraditionalInstrumentsPage

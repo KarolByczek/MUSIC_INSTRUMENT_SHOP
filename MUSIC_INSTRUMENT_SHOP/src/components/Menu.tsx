@@ -19,6 +19,9 @@ const Menu = () => {
                 <Link className="link" to="/microphones">
                     <div className="menu_link">MICROPHONES</div>
                 </Link>
+                <Link className="link" to="/traditional_instruments">
+                    <div className="menu_link">TRADITIONAL INSTRUMENTS</div>
+                </Link>
             </ul>
         </div>
     )

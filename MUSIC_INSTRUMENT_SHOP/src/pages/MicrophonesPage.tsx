@@ -7,7 +7,7 @@ const MicrophonesPage = () => {
   return (
     <div>
        <head>
-        <title>MICROPHONES SECTION</title>
+        <title>MICROPHONES PAGE</title>
       </head>
       <body>
         <HeadStrip />
@@ -15,7 +15,7 @@ const MicrophonesPage = () => {
         <ProductStrip />
         <Menu />
         <h1>
-          MICROPHONES SECTION
+          MICROPHONES PAGE
         </h1>
       </body>
     </div>

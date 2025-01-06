@@ -9,7 +9,7 @@ function GuitarsSection() {
   return (
     <>
       <head>
-        <title>GUITARS SECTION</title>
+        <title>GUITARS PAGE</title>
       </head>
       <body>
         <HeadStrip />
@@ -17,7 +17,7 @@ function GuitarsSection() {
         <ProductStrip />
         <Menu />
         <h1>
-          GUITARS SECTION
+          GUITARS PAGE
         </h1>
       </body>
 

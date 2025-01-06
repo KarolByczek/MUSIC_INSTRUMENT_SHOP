@@ -8,7 +8,7 @@ const DrumsPage = () => {
   return (
     <>
       <head>
-        <title>DRUMS SECTION</title>
+        <title>DRUMS PAGE</title>
       </head>
       <body>
         <HeadStrip />
@@ -16,7 +16,7 @@ const DrumsPage = () => {
         <ProductStrip />
         <Menu />
         <h1>
-          DRUMS SECTION
+          DRUMS PAGE
         </h1>
       </body>
     </>

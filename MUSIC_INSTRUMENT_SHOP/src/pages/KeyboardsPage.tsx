@@ -8,7 +8,7 @@ const KeyboardsPage = () => {
   return (
     <>
       <head>
-        <title>KEYBORDS SECTION</title>
+        <title>KEYBORDS PAGE</title>
       </head>
       <body>
         <HeadStrip />
@@ -16,7 +16,7 @@ const KeyboardsPage = () => {
         <ProductStrip />
         <Menu />
         <h1>
-          KEYBOARDS SECTION
+          KEYBOARDS PAGE
         </h1>
       </body>
 

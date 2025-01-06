@@ -8,7 +8,7 @@ const SaxophonesPage = () => {
   return (
     <>
       <head>
-        <title>SAXOPHONES SECTION</title>
+        <title>SAXOPHONES PAGE</title>
       </head>
       <body>
         <HeadStrip />
@@ -16,7 +16,7 @@ const SaxophonesPage = () => {
         <ProductStrip />
         <Menu />
         <h1>
-          SAXOPHONES SECTION
+          SAXOPHONES PAGE
         </h1>
       </body>
     </>

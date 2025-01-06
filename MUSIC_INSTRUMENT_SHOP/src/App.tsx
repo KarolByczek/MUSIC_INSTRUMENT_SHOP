@@ -5,6 +5,7 @@ import SaxophonesPage from './pages/SaxophonesPage';
 import DrumsPage from './pages/DrumsPage';
 import KeyboardsPage from './pages/KeyboardsPage';
 import './index.scss';
+import MicrophonesPage from './pages/MicrophonesPage';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/saxophones" element={<SaxophonesPage />} />
         <Route path="/drums" element={<DrumsPage />} />
         <Route path="/keyboards" element={<KeyboardsPage />} />
+        <Route path="/microphones" element={<MicrophonesPage />}></Route>
       </Routes>
     </Router>
   );

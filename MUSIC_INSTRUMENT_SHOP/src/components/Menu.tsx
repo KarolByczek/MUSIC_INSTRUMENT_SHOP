@@ -22,6 +22,9 @@ const Menu = () => {
                 <Link className="link" to="/traditional_instruments">
                     <div className="menu_link">TRADITIONAL INSTRUMENTS</div>
                 </Link>
+                <Link className="link" to="/accessories">
+                    <div className="menu_link">ACCESSORIES</div>
+                </Link>
             </ul>
         </div>
     )

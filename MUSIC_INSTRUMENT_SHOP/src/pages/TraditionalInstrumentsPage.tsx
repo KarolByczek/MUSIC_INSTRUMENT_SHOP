@@ -15,7 +15,7 @@ const TraditionalInstrumentsPage = () => {
         <ProductStrip />
         <Menu />
         <h1>
-            TRADITIONAL INSTRUMENTS PAGE
+          TRADITIONAL INSTRUMENTS PAGE
         </h1>
       </body>
     </div>

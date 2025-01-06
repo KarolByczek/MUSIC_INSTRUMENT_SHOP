@@ -3,13 +3,11 @@ import HeadStrip from "../components/HeadStrip";
 import Menu from "../components/Menu";
 import ProductStrip from "../components/ProductStrip";
 
-
-function GuitarsSection() {
-
+const AccessoriesPage = () => {
   return (
-    <>
-      <head>
-        <title>GUITARS PAGE</title>
+    <div>
+       <head>
+        <title>ACCESSORIES PAGE</title>
       </head>
       <body>
         <HeadStrip />
@@ -17,11 +15,11 @@ function GuitarsSection() {
         <ProductStrip />
         <Menu />
         <h1>
-          GUITARS PAGE
+          ACCESSORIES PAGE
         </h1>
       </body>
-    </>
+    </div>
   )
 }
 
-export default GuitarsSection
+export default AccessoriesPage

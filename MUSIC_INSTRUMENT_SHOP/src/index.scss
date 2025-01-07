@@ -47,10 +47,10 @@ body {
 .main_menu ul {
   display: flex;
   flex-direction: row;
-  gap: 0rem;
+  gap: 1rem;
   list-style-type: none;
-  background-color: #6c6e90;
-  padding-left: 0;
+  background-color: #000000;
+  padding: 0.5rem 0 0.5rem 3rem;
   margin: 0;
 }
 
@@ -59,9 +59,14 @@ body {
 }
 
 .menu_link {
-  border: 2px solid crimson;
-  background-color: rgb(228, 207, 207);
-  color: #1a1a1a;
+  border-radius: 0.4rem;
+  background-color: inherit;
+  color: aliceblue;
+  padding: 0.3rem 0.5rem;
+}
+
+.menu_link:hover {
+  background-color:#141dc7
 }
 
 
@@ -262,8 +267,6 @@ h1 {
   text-align: center;
   font-style: oblique;
   color: gray;
-  
-
 }
 
 .product_strip .product_substrip.product_substrip_right {

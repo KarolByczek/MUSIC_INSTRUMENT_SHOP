@@ -246,6 +246,26 @@ h1 {
   padding: 0.5rem;
 }
 
+.product_strip .product_substrip.product_substrip_middle input {
+  width: 100%;
+  background-color: aliceblue;
+  border-radius: 3rem;
+  color: #1a1a1a;
+  font-weight: 500;
+  font-size: large;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+
+.product_strip .product_substrip.product_substrip_middle input::placeholder {
+  text-align: center;
+  font-style: oblique;
+  color: gray;
+  
+
+}
+
 .product_strip .product_substrip.product_substrip_right {
   justify-content: right;
   align-items: center;

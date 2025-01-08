@@ -351,31 +351,71 @@ h1 {
   ;
 }
 
+
+
 .carousel {
-  width: 300px;
-  height: 200px;
-  overflow: auto;
-  /* Enable scrolling */
-  white-space: nowrap;
-  /* Prevent line wrapping */
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
-  cursor: grab;
-  /* Change cursor to indicate drag functionality */
-}
-
-.carousel .slides {
-  display: inline-block;
-}
-
-.carousel .slides .slide {
-  display: inline-block;
-  width: 250px;
-  height: 150px;
-  margin: 10px;
-  background-color: #007bff;
-  color: white;
-  text-align: center;
-  line-height: 150px;
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
   border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-content {
+  text-align: center;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-dots {
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #333;
 }

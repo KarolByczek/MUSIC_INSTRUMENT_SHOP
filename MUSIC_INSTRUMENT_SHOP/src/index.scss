@@ -66,7 +66,7 @@ body {
 }
 
 .menu_link:hover {
-  background-color:#141dc7
+  background-color: #141dc7
 }
 
 
@@ -98,7 +98,7 @@ body {
   justify-content: right;
   margin-right: 2rem;
   width: 30%;
- 
+
 }
 
 .company_strip .company_icon {
@@ -307,7 +307,7 @@ h1 {
   align-items: center;
 }
 
-.product_strip .product_substrip.product_substrip_right a.shopper-account svg{
+.product_strip .product_substrip.product_substrip_right a.shopper-account svg {
   height: 2rem;
   width: auto;
 }
@@ -327,7 +327,8 @@ h1 {
 }
 
 .product_strip .product_substrip.product_substrip_right a.wish-list svg:hover path {
-  fill: #535bf2;;
+  fill: #535bf2;
+  ;
 }
 
 .product_strip .product_substrip.product_substrip_right a.shopping-cart {
@@ -341,21 +342,26 @@ h1 {
 }
 
 .product_strip .product_substrip.product_substrip_right a.shopping-cart svg:hover path {
-  fill: #535bf2;;
+  fill: #535bf2;
+  ;
 }
 
 .product_strip .product_substrip.product_substrip_right a.shopping-cart svg:hover circle {
-  fill: #535bf2;;
+  fill: #535bf2;
+  ;
 }
 
 .carousel {
   width: 300px;
   height: 200px;
-  overflow: auto; /* Enable scrolling */
-  white-space: nowrap; /* Prevent line wrapping */
+  overflow: auto;
+  /* Enable scrolling */
+  white-space: nowrap;
+  /* Prevent line wrapping */
   border: 1px solid #ccc;
   background-color: #f9f9f9;
-  cursor: grab; /* Change cursor to indicate drag functionality */
+  cursor: grab;
+  /* Change cursor to indicate drag functionality */
 }
 
 .carousel .slides {
@@ -364,12 +370,12 @@ h1 {
 
 .carousel .slides .slide {
   display: inline-block;
-      width: 250px;
-      height: 150px;
-      margin: 10px;
-      background-color: #007bff;
-      color: white;
-      text-align: center;
-      line-height: 150px;
-      border-radius: 10px;
+  width: 250px;
+  height: 150px;
+  margin: 10px;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  line-height: 150px;
+  border-radius: 10px;
 }

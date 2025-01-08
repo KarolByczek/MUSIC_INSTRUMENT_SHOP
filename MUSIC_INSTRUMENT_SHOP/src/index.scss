@@ -347,3 +347,13 @@ h1 {
 .product_strip .product_substrip.product_substrip_right a.shopping-cart svg:hover circle {
   fill: #535bf2;;
 }
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+.carousel img {
+  width: 800px;
+  height: 350px;
+}

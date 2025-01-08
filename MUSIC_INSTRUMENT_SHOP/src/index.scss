@@ -349,11 +349,27 @@ h1 {
 }
 
 .carousel {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
+  width: 300px;
+  height: 200px;
+  overflow: auto; /* Enable scrolling */
+  white-space: nowrap; /* Prevent line wrapping */
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: grab; /* Change cursor to indicate drag functionality */
 }
-.carousel img {
-  width: 800px;
-  height: 350px;
+
+.carousel .slides {
+  display: inline-block;
+}
+
+.carousel .slides .slide {
+  display: inline-block;
+      width: 250px;
+      height: 150px;
+      margin: 10px;
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      line-height: 150px;
+      border-radius: 10px;
 }

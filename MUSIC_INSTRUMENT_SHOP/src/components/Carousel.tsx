@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-const Carousel = (items:any) => {
+const Carousel = ({ items }:any) => {
 
     const carouselRef:any = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -38,9 +38,9 @@ const Carousel = (items:any) => {
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
     >
-      {items.map((item:any, index:any) => (
+      {items.map((item:any, index:number) => (
         <div className="carousel-item" key={index}>
-          <img src={item} />
+          <img src={item} alt={item} />
         </div>
       ))}
     </div>

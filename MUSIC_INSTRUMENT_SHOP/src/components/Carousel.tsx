@@ -1,8 +1,8 @@
-import { useRef, useState } from 'react';
+import React, { MutableRefObject, useRef, useState } from 'react';
 
 const Carousel = ({ items }:any) => {
 
-    const carouselRef:any = useRef(null);
+    const carouselRef:MutableRefObject<any> = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
@@ -14,18 +14,22 @@ const Carousel = ({ items }:any) => {
   };
 
   const handleMouseLeave = () => {
-    setIsDragging(false);
+    if (isDragging) {
+      setIsDragging(false);
+    }
   };
 
   const handleMouseUp = () => {
-    setIsDragging(false);
+    if (isDragging) {
+      setIsDragging(false);
+    }
   };
 
   const handleMouseMove = (e:any) => {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - carouselRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Adjust sensitivity
+    const walk = (x - startX) * 1.5; // Adjust the multiplier for sensitivity
     carouselRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -40,7 +44,7 @@ const Carousel = ({ items }:any) => {
     >
       {items.map((item:any, index:number) => (
         <div className="carousel-item" key={index}>
-          <img src={item} alt={item} />
+          {item}
         </div>
       ))}
     </div>

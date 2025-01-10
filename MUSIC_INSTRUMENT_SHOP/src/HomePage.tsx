@@ -1,8 +1,8 @@
-import { useState } from "react";
 import CompanyStrip from './components/CompanyStrip';
 import HeadStrip from './components/HeadStrip';
 import Menu from './components/Menu';
 import ProductStrip from './components/ProductStrip';
+import Carousel from "./components/Carousel";
 
 const images = [
   "https://thumbs.static-thomann.de/thumb//txteaser1000--3dc0e243f6392c74f5793ac39f2c5bab/pics/cms/image/teasertool/de/13332/digital_mixers.webp?d=ZW1uZzUybENVcVB5cUdiLzJkeTVpK2psRFhJSjNOQ2pHSSs5eUlEdzVUYWpIOWMrMWkxckVPZ1c2d0NXckxaZTdyVGlISkZ0bWwvcmdON3RGV2o0QWRVZnhHZlRpSVp1cDVtb1crNTlOL00yR1lLczFBVDFBcUludlJ6U1JrbGl0VXkrV0FaWkxzb2ZYYlhzcXYzRGJIcWVxSWtRN1l6Q3lMWE1RelpaVEF0Z1ZSdytFSmU3dW04aGw1RkNXZ2ZYMWd1TzZJMDh0VGxkNWV1U2lWU3pxelJMc3Y4QjgrSGtsZHpmOEV0Z2JoS212TTRwc054cUsxRlY4L3VsV25ET2N5Zk5lL1pXUlpSNWs0VXVzNGZVZUpTVnQvRjUrK3diUEp4M0ZDcDg5WS9nZEJNQkFpVHAvc2Myb1V4aWlsL2g%3D",
@@ -12,18 +12,6 @@ const images = [
 ];
 
 function HomePage() {
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const goToPrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
 
   return (
     <>
@@ -35,30 +23,7 @@ function HomePage() {
         <CompanyStrip />
         <ProductStrip />
         <Menu />
-        <div className="carousel">
-          <button className="carousel-button prev" onClick={goToPrev}>
-            &lt;
-          </button>
-          <div className="carousel-content">
-            <img
-              src={images[currentIndex]}
-              alt={`Slide ${currentIndex}`}
-              className="carousel-image"
-            />
-          </div>
-          <button className="carousel-button next" onClick={goToNext}>
-            &gt;
-          </button>
-          <div className="carousel-dots">
-            {images.map((_, index: number) => (
-              <span
-                key={index}
-                className={`dot ${index === currentIndex ? "active" : ""}`}
-                onClick={() => setCurrentIndex(index)}
-              />
-            ))}
-          </div>
-        </div>
+        <Carousel items={images}/>
         <h1>
           THE SHOP
         </h1>

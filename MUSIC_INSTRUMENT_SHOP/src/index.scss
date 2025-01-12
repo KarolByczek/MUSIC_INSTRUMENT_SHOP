@@ -365,11 +365,11 @@ h1 {
 }
 
 .slider {
+  --slider-index: 0;
   flex-grow: 1;
   display: flex;
-  transform: translateX(-00%);
   margin: 0 .25rem;
-  width: calc(100% - 5rem);
+  transform: translateX(calc(var(--slider-index) * -100));
 }
 
 .slider > img {
@@ -382,16 +382,14 @@ h1 {
 }
 
 .handle {
-  width: 2.5rem;
   border: none;
   flex-grow: 0;
-  width: 2.5rem;
   background-color: rgb(225, 31, 31);
   opacity: 0.6;
   z-index: 10;
   margin: .25rem 0;
   cursor: pointer;
-  border-radius: 1rem;
+  border-radius: 0.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -399,12 +397,19 @@ h1 {
   transition: all 0.2s ease-in-out;
 }
 
+.handle .text {
+  transition: all 0.2s ease-in-out;
+}
+
 .handle:hover,
 .handle:focus {
   background-color: rgb(156, 7, 7);
-  font-size: 3rem;
   opacity: 0.8;
   outline: none;
+}
+
+.handle:hover .text {
+  transform: scale(1.1);
 }
 
 

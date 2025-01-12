@@ -4,15 +4,6 @@ import Menu from './components/Menu';
 import ProductStrip from './components/ProductStrip';
 import Carousel from "./components/Carousel";
 
-const images = [
-  "one",
-  "two",
-  "three",
-  "four",
-  "five",
-  "six",
-  "seven"
-]
 
 function HomePage() {
 
@@ -26,7 +17,7 @@ function HomePage() {
         <CompanyStrip />
         <ProductStrip />
         <Menu />
-        <Carousel items={images}/>
+        <Carousel />
         <h1>
           THE SHOP
         </h1>

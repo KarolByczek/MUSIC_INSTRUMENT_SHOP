@@ -375,6 +375,7 @@ h1 {
  aspect-ratio: 16 / 7;
  padding: .25rem;
  cursor: grab;
+ border-radius: .5rem;
 }
 
 .handle {
@@ -385,8 +386,27 @@ h1 {
   z-index: 10;
   margin: .25rem 0;
   cursor: pointer;
+  border-radius: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.4rem;
 }
 
 .handle:hover {
   background-color: rgb(177, 10, 10);
+}
+
+.handle:hover::after {
+  color: aliceblue;
+}
+
+.right-handle {
+ border-top-right-radius: 0;
+ border-bottom-right-radius: 0
+}
+
+.left-handle {
+   border-top-left-radius: 0;
+   border-bottom-left-radius: 0
 }

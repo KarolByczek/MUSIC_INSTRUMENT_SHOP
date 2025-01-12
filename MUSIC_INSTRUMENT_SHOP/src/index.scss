@@ -1,3 +1,7 @@
+*, *::after, ::before {
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -351,28 +355,38 @@ h1 {
   ;
 }
 
-.carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  cursor: grab;
-  gap: 10px;
-  padding: 10px;
-  user-select: none;
+.container {
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ overflow: scroll;
 }
 
-.carousel:active {
-  cursor: grabbing;
+.slider {
+  flex-grow: 1;
+  display: flex;
+  transform: translateX(-00%);
+  width: calc(100% - 5rem);
 }
 
-.carousel-item {
-  flex: 0 0 auto;
-  width: 400px;
-  height: 250px;
-  background-color: #f0f0f0;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
+.slider > img {
+  flex: 0 0 25%;
+  max-width: 25%;
+ aspect-ratio: 16 / 7;
+ padding: .25rem;
+ cursor: grab;
+}
+
+.handle {
+  flex-grow: 0;
+  width: 2.5rem;
+  background-color: rgb(209, 79, 79);
+  opacity: 0.5;
+  z-index: 10;
+  margin: .25rem 0;
+  cursor: pointer;
+}
+
+.handle:hover {
+  background-color: rgb(177, 10, 10);
 }

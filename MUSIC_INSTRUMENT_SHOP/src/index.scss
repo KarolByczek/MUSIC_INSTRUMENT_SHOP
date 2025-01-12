@@ -362,6 +362,11 @@ h1 {
   display: flex;
   justify-content: center;
   overflow: scroll;
+  
+}
+
+.container::-webkit-scrollbar {
+  display: none;
 }
 
 .slider {
@@ -370,6 +375,7 @@ h1 {
   display: flex;
   margin: 0 .25rem;
   transform: translateX(calc(var(--slider-index) * -100));
+  
 }
 
 .slider > img {

@@ -5,10 +5,10 @@ const Carousel = () => {
   function onClickHandle(e:any) {
     const slider = e.target.closest(".container").querySelector(".slider")
     const sliderIndex = parseInt(getComputedStyle(slider).getPropertyValue("--slider-index"))
-    if (e.target.classList.contains(".left-handle")) {
+    if (slider.classList.contains(".left-handle")) {
       slider.style.setProperty("--slider-index", sliderIndex - 1)
     }
-    if (e.target.classList.contains(".left-handle")) {
+    if (slider.classList.contains(".left-handle")) {
       slider.style.setProperty("--slider-index", sliderIndex + 1)
     }
   }

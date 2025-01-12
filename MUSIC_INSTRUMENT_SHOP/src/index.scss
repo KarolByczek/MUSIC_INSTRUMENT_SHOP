@@ -1,4 +1,6 @@
-*, *::after, ::before {
+*,
+*::after,
+::before {
   box-sizing: border-box;
 }
 
@@ -356,57 +358,62 @@ h1 {
 }
 
 .container {
- width: 100%;
- display: flex;
- justify-content: center;
- overflow: scroll;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: scroll;
 }
 
 .slider {
   flex-grow: 1;
   display: flex;
   transform: translateX(-00%);
+  margin: 0 .25rem;
   width: calc(100% - 5rem);
 }
 
 .slider > img {
   flex: 0 0 25%;
   max-width: 25%;
- aspect-ratio: 16 / 7;
- padding: .25rem;
- cursor: grab;
- border-radius: .5rem;
+  aspect-ratio: 16 / 9;
+  padding: .25rem;
+  cursor: grab;
+  border-radius: 1rem;
 }
 
 .handle {
+  width: 2.5rem;
+  border: none;
   flex-grow: 0;
   width: 2.5rem;
-  background-color: rgb(209, 79, 79);
-  opacity: 0.5;
+  background-color: rgb(225, 31, 31);
+  opacity: 0.6;
   z-index: 10;
   margin: .25rem 0;
   cursor: pointer;
-  border-radius: .5rem;
+  border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2.4rem;
+  transition: all 0.2s ease-in-out;
 }
 
-.handle:hover {
-  background-color: rgb(177, 10, 10);
+.handle:hover,
+.handle:focus {
+  background-color: rgb(156, 7, 7);
+  font-size: 3rem;
+  opacity: 0.8;
+  outline: none;
 }
 
-.handle:hover::after {
-  color: aliceblue;
-}
 
 .right-handle {
- border-top-right-radius: 0;
- border-bottom-right-radius: 0
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0
 }
 
 .left-handle {
-   border-top-left-radius: 0;
-   border-bottom-left-radius: 0
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0
 }

@@ -363,7 +363,6 @@ h1 {
   display: flex;
   justify-content: center;
   overflow: scroll;
-  
 }
 
 .container::-webkit-scrollbar {
@@ -389,6 +388,8 @@ h1 {
 }
 
 .handle {
+  position: fixed;
+  height: 100%;
   border: none;
   flex-grow: 0;
   background-color: rgb(225, 31, 31);
@@ -421,11 +422,13 @@ h1 {
 
 
 .right-handle {
+  right: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0
 }
 
 .left-handle {
+  left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0
 }

@@ -3,18 +3,20 @@ import React, { useRef } from "react"
 
 const Carousel = () => {
 
-  const sliderRef = useRef(null);
+  const sliderRef:React.MutableRefObject<null> = useRef(null);
 
   function onClickHandle(e: any) {
-    const slider: any = sliderRef.current;
+    const slider:any = sliderRef.current;
     if (!slider) return;
   
     const sliderIndex = parseInt(getComputedStyle(slider).getPropertyValue("--slider-index")) || 0;
     const totalSlides = slider.children.length;
+    console.log("Slider Index:", sliderIndex);
   
     if (e.target.classList.contains("left-handle")) {
       const newIndex = Math.max(sliderIndex - 1, 0); // Prevent going below 0
       slider.style.setProperty("--slider-index", newIndex);
+      console.log("New index:", newIndex)
     } else if (e.target.classList.contains("right-handle")) {
       const newIndex = Math.min(sliderIndex + 1, totalSlides - 1); // Prevent exceeding the number of slides
       slider.style.setProperty("--slider-index", newIndex);

@@ -27,7 +27,7 @@ function HomePage() {
         <CompanyStrip />
         <ProductStrip />
         <Menu />
-        <Carousel images={IMAGES}/>
+        <Carousel images={IMAGES} />
         <h1>
           THE SHOP
         </h1>

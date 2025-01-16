@@ -9,10 +9,8 @@ function HomePage() {
 
   return (
     <>
-      <head>
         <title>HOME PAGE</title>
-      </head>
-      <body>
+      <section>
         <HeadStrip />
         <CompanyStrip />
         <ProductStrip />
@@ -21,7 +19,7 @@ function HomePage() {
         <h1>
           THE SHOP
         </h1>
-      </body>
+      </section>
     </>
   )
 }

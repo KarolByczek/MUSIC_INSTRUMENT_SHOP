@@ -6,28 +6,33 @@ const Carousel = () => {
   const sliderRef:React.MutableRefObject<null> = useRef(null);
 
   function onClickHandle(e: any) {
-    const slider:any = sliderRef.current;
+    const slider: any = sliderRef.current;
     if (!slider) return;
   
     const sliderIndex = parseInt(getComputedStyle(slider).getPropertyValue("--slider-index")) || 0;
     const totalSlides = slider.children.length;
-    console.log("Slider Index:", sliderIndex);
+    console.log("Current Index:", sliderIndex)
   
     if (e.target.classList.contains("left-handle")) {
-      const newIndex = Math.max(sliderIndex - 1, 0); // Prevent going below 0
+      const newIndex = sliderIndex - 1; 
       slider.style.setProperty("--slider-index", newIndex);
-      console.log("New index:", newIndex)
+      if (newIndex < 0) {
+        slider.style.setProperty("--slider-index", ((totalSlides -1) / 4))
+      }
     } else if (e.target.classList.contains("right-handle")) {
-      const newIndex = Math.min(sliderIndex + 1, totalSlides - 1); // Prevent exceeding the number of slides
+      const newIndex = sliderIndex + 1;
       slider.style.setProperty("--slider-index", newIndex);
+      if (newIndex * 4 > totalSlides) {
+        slider.style.setProperty("--slider-index", 0)
+      }
     }
   }
 
 
   return (
-    <div className="container" onClick={onClickHandle}>
-      <button className="handle left-handle" >
-        <div className="text">&#129088;</div>
+    <div className="container" >
+      <button className="handle left-handle" onClick={onClickHandle}>
+        <div className="text left-handle">&#129088;</div>
       </button>
       <div ref={sliderRef} className='slider'>
         <img src="https://thumbs.static-thomann.de/thumb//txteaser1000--16bcb21d2cf8859a60079edf7f73a7d6/pics/cms/image/teasertool/de/13242/448687_homepianos.webp?d=ZW1uZzUybENVcU1RQ2dsZk0yNmUxT2psRFhJSjNOQ2pDeGJkUktiWVVOV2pIOWMrMWkxckVPZ1c2d0NXckxaZTdyVGlISkZ0bWwvcmdON3RGV2o0QWRVZnhHZlRpSVp1cDVtb1crNTlOL00yR1lLczFBVDFBcUludlJ6U1JrbGl0VXkrV0FaWkxzb2ZYYlhzcXYzRGJIcWVxSWtRN1l6Q3lMWE1RelpaVEF0Z1ZSdytFSmU3dXNBTThVSkJaQ05BaGxRdXJaeXpyZzFkNWV1U2lWU3pxelJMc3Y4QjgrSGtsZHpmOEV0Z2JoS212TTRwc054cUsxWFFMbDY2UUlqeHpUeE81NUEwYTd4NWs0VXVzNGZVZUpTVnQvRjUrK3diUEp4M0ZDcDg5WS9nZEJNQkFpVHAvc2Myb1V4aWlsL2g%3D" alt="alternative1" />
@@ -40,8 +45,8 @@ const Carousel = () => {
         <img src="https://thumbs.static-thomann.de/thumb//txteaser1000--08ffb962fc687cc34ef41bb18e3a8797/pics/cms/image/teasertool/de/13242/recorder_topseller.webp?d=ZW1uZzUybENVcU1acXgwb0lDTTdxL2QySUZEVE9WTzljVFhoQnRLZTRHUnNxOTc4RVF0d1JJd2FzL3djT0RPWW5rcCtsS05mS3pkYjRjaTBSRHhsR1NTY05tTXRmc1YwM1lHcm1kaVo5RlhsUTRZMnJFeDYzZGRpeEZLTkxiVEFRazJrVXZNdU92aUtlSFBoTHNRSWJML09ZdjBhZmphdktNaktTSU5KTHIxZ1ZSdytFSmU3dW04aGw1RkNXZ2ZYMWd1TzZJMDh0VGxkNWV1U2lWU3pxK0pqamZtUlhoMXpHT3FGLytUcjBVUVpWdVhJZytHRWxOaDlTRXZ2NWk0akVZcHpKRmFCL0pyZDNMbEV6OFdlUFZ2MExEQ2plM095WTV4bDVTaHJSbTZTQjJzTjN6QnhsUmU1VGM2WFp6Y0M%3D" alt="..." />
         <img src="https://thumbs.static-thomann.de/thumb//txteaser1000--73c9c321288d3e20f36177c248860328/pics/cms/image/teasertool/de/13242/looper_topsellers_2.webp?d=ZW1uZzUybENVcVA0NldrT1VtUm9ZdmQySUZEVE9WTzlqeExVc2NIVkZPcHNxOTc4RVF0d1JJd2FzL3djT0RPWW5rcCtsS05mS3pkYjRjaTBSRHhsR1NTY05tTXRmc1YwM1lHcm1kaVo5RlhsUTRZMnJFeDYzZGRpeEZLTkxiVEFRazJrVXZNdU92ak1KdURyKzlScmptL1dlV0lqTUd0WHBQa29OZWdpRTMyTmduQTFnYXBaRkszdDJ2TllqTzlvNkdDMC81SmpmSDAyKzJCa1kyakF4SFM5cWxXYWMyVmRLSGtNUmViejNRdUhpMVNpZTA5dFc1d3BERE1uMDd0SjZlVXdkVGVzb0JFaVVTT2RYY285U3VTSFgzUldXenNtaitEcE9qNEtPWmNqdllCUWVRK3ZXQT09" alt="..." />
       </div>
-      <button className="handle right-handle">
-        <div className="text">&#129090;</div>
+      <button className="handle right-handle" onClick={onClickHandle}>
+        <div className="text right-handle">&#129090;</div>
       </button>
     </div>
   );

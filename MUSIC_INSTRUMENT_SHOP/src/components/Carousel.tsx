@@ -8,7 +8,6 @@ interface CarouselProps {
 const Carousel: React.FC<CarouselProps> = ({ images }) => {
 
   const sliderRef: any = useRef<HTMLDivElement>(null);
-  const [showcaseImages, setShowcaseImages] = useState<string[]>([images[0], images[1], images[2], images[3]]);
 
   /*function onClickHandle(e: any) {
     const slider: any = sliderRef.current;
@@ -42,13 +41,19 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
     const totalSlides = images.length;
     const newIndex = sliderIndex + 1;
     
-    if (e.target.classList.contains("right-handle")) {
+    if (e.target.classList.contains("right-handle") && sliderIndex <= 5) {
       slider.style.setProperty("--slider-index", newIndex);
-      setShowcaseImages([images[0 + newIndex], images[1 + newIndex], images[ 2 + newIndex], images[3 + newIndex]]);
-      if (images.indexOf(showcaseImages[3]) + 1 > totalSlides) {
-        setShowcaseImages([images[1 + newIndex], images[ 2 + newIndex], images[3 + newIndex], images[0]])
-      }
+      const nextImage = document.createElement("img");
+      nextImage.setAttribute("src", images[3 + newIndex]);
+      slider.append(nextImage);
+      slider.removeChild();
     }
+    else {
+        const nextImage = document.createElement("img");
+      nextImage.setAttribute("src", images[newIndex]);
+      slider.append(nextImage);
+      }
+    
     
   }
 
@@ -61,7 +66,7 @@ return (
       <div className="text left-handle">&#129088;</div>
     </button>
     <div ref={sliderRef} className='slider'>
-      {showcaseImages.map((image: string, index: number) => {
+      {images.map((image: string, index: number) => {
         return (
           <img key={index} src={image} alt={`Slide ${index + 1}`} />
         )

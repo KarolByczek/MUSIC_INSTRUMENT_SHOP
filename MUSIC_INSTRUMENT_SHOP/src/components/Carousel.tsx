@@ -1,13 +1,16 @@
-import { useRef } from "react"
+import React, { useRef } from "react";
 
+interface CarouselProps {
+  images: string[];
+}
 
-const Carousel = (images: any) => {
+const Carousel:React.FC<CarouselProps> = ({images}) => {
   
 
   const sliderRef:any = useRef<HTMLDivElement>(null);
 
   function onClickHandle(e: any) {
-    const slider: any = sliderRef.current;
+    const slider:any = sliderRef.current;
     if (!slider) return;
 
     const sliderIndex = parseInt(getComputedStyle(slider).getPropertyValue("--slider-index")) || 0;
@@ -43,7 +46,6 @@ const Carousel = (images: any) => {
         <div className="text left-handle">&#129088;</div>
       </button>
       <div ref={sliderRef} className='slider'>
-        {console.log(images)}
         {images.map((image: string, index:number) => {
           return (
           <img key={index} src={image} alt={`Slide ${index + 1}`} />

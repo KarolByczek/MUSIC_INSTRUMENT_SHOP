@@ -1,5 +1,4 @@
-import React, { useRef } from "react";
-import { useState } from "react";
+import React, { useRef, useState } from "react";
 
 interface CarouselProps {
   images: string[];
@@ -8,6 +7,8 @@ interface CarouselProps {
 const Carousel: React.FC<CarouselProps> = ({ images }) => {
 
   const sliderRef: any = useRef<HTMLDivElement>(null);
+  const [newIndex, setNewIndex] = useState<number>(3);
+  const [showCase, setShowCase] = useState<string[]>(images.slice(0, 4));
 
   /*function onClickHandle(e: any) {
     const slider: any = sliderRef.current;
@@ -37,27 +38,22 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
     const slider: any = sliderRef.current;
     if (!slider) return;
 
-    const sliderIndex = parseInt(getComputedStyle(slider).getPropertyValue("--slider-index")) || 0;
-    const totalSlides = images.length;
-    const newIndex = sliderIndex + 1;
+    setNewIndex(newIndex + 1);
     
-    if (e.target.classList.contains("right-handle") && sliderIndex <= 5) {
+    
+    if (e.target.classList.contains("right-handle")) {
+      setShowCase(showCase.concat(images[newIndex]));
       slider.style.setProperty("--slider-index", newIndex);
-      const nextImage = document.createElement("img");
-      nextImage.setAttribute("src", images[3 + newIndex]);
-      slider.append(nextImage);
-      slider.removeChild();
-    }
-    else {
-        const nextImage = document.createElement("img");
-      nextImage.setAttribute("src", images[newIndex]);
-      slider.append(nextImage);
+      console.log(newIndex);
+      console.log(showCase);
+      if (newIndex > 8) {
+        setNewIndex(0);
       }
+      
+    }
     
     
   }
-
-
 
 
 return (
@@ -66,9 +62,9 @@ return (
       <div className="text left-handle">&#129088;</div>
     </button>
     <div ref={sliderRef} className='slider'>
-      {images.map((image: string, index: number) => {
+      {showCase.map((one:string, index:number) => {
         return (
-          <img key={index} src={image} alt={`Slide ${index + 1}`} />
+          <img key={index} src={one} alt={one} />
         )
       })}
     </div>

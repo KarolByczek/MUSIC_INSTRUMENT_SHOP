@@ -34,31 +34,25 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
   }*/
 
   
-  function onClickHandle(e: any) {
+  function onClickHandleRight() {
     const slider: any = sliderRef.current;
     if (!slider) return;
 
     setNewIndex(newIndex + 1);
-    
-    
-    if (e.target.classList.contains("right-handle")) {
-      setShowCase(showCase.concat(images[newIndex]));
-      slider.style.setProperty("--slider-index", newIndex);
-      console.log(newIndex);
-      console.log(showCase);
-      if (newIndex > 8) {
-        setNewIndex(0);
-      }
+    console.log(newIndex);
+    setShowCase([images[newIndex-3], images[newIndex-2], images[newIndex-1], images[newIndex]]);
+    slider.style.transform = "translateX(-25%)";
+    slider.style.transition = "transform 0.3s ease-in-out";
       
     }
     
     
-  }
+  
 
 
 return (
   <div className="container" >
-    <button className="handle left-handle" onClick={onClickHandle}>
+    <button className="handle left-handle">
       <div className="text left-handle">&#129088;</div>
     </button>
     <div ref={sliderRef} className='slider'>
@@ -68,11 +62,11 @@ return (
         )
       })}
     </div>
-    <button className="handle right-handle" onClick={onClickHandle}>
+    <button className="handle right-handle" onClick={onClickHandleRight}>
       <div className="text right-handle">&#129090;</div>
     </button>
   </div>
 );
-}
+};
 
 export default Carousel

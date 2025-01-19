@@ -75,12 +75,12 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
 
   return (
     <div className="carousel">
-      <button onClick={handlePrev}>&#10094;</button>
+      <button className="slider_button" onClick={handlePrev}>&#10094;</button>
       <div
         className="carousel-slider"
         ref={sliderRef}
         style={{
-          transform: `translateX(-${currentIndex * 50}%)`,
+          transform: `translateX(-${currentIndex * 33}%)`,
         }}
       >
         {extendedSlides.map((slide, index) => (
@@ -89,7 +89,7 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
           </div>
         ))}
       </div>
-      <button onClick={handleNext}>&#10095;</button>
+      <button className="slider_button" onClick={handleNext}>&#10095;</button>
     </div>
   );
 };

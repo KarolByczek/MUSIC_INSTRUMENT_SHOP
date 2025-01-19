@@ -17,6 +17,12 @@ const IMAGES = [
   "https://thumbs.static-thomann.de/thumb//txteaser1000--73c9c321288d3e20f36177c248860328/pics/cms/image/teasertool/de/13242/looper_topsellers_2.webp?d=ZW1uZzUybENVcVA0NldrT1VtUm9ZdmQySUZEVE9WTzlqeExVc2NIVkZPcHNxOTc4RVF0d1JJd2FzL3djT0RPWW5rcCtsS05mS3pkYjRjaTBSRHhsR1NTY05tTXRmc1YwM1lHcm1kaVo5RlhsUTRZMnJFeDYzZGRpeEZLTkxiVEFRazJrVXZNdU92ak1KdURyKzlScmptL1dlV0lqTUd0WHBQa29OZWdpRTMyTmduQTFnYXBaRkszdDJ2TllqTzlvNkdDMC81SmpmSDAyKzJCa1kyakF4SFM5cWxXYWMyVmRLSGtNUmViejNRdUhpMVNpZTA5dFc1d3BERE1uMDd0SjZlVXdkVGVzb0JFaVVTT2RYY285U3VTSFgzUldXenNtaitEcE9qNEtPWmNqdllCUWVRK3ZXQT09"
 ]
 
+const slides = [
+  "https://via.placeholder.com/600x300?text=Slide+1",
+  "https://via.placeholder.com/600x300?text=Slide+2",
+  "https://via.placeholder.com/600x300?text=Slide+3",
+];
+
 function HomePage() {
 
   return (
@@ -27,7 +33,7 @@ function HomePage() {
         <CompanyStrip />
         <ProductStrip />
         <Menu />
-        <Carousel images={IMAGES} />
+        <Carousel slides={IMAGES} />
         <h1>
           THE SHOP
         </h1>

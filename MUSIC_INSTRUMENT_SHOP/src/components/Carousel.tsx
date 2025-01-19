@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 interface CarouselProps {
   images: string[];
@@ -7,8 +7,8 @@ interface CarouselProps {
 const Carousel: React.FC<CarouselProps> = ({ images }) => {
 
   const sliderRef: any = useRef<HTMLDivElement>(null);
-  const [newIndex, setNewIndex] = useState<number>(3);
-  const [showCase, setShowCase] = useState<string[]>(images.slice(0, 4));
+  const [currentIndex, setCurrentIndex] = useState<number>(1);
+  const extendedSlides = [images[images.length - 1], ...images, images[0]];
 
   /*function onClickHandle(e: any) {
     const slider: any = sliderRef.current;
@@ -33,40 +33,53 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
     }
   }*/
 
-  
-  function onClickHandleRight() {
-    const slider: any = sliderRef.current;
-    if (!slider) return;
 
-    setNewIndex(newIndex + 1);
-    console.log(newIndex);
-    setShowCase([images[newIndex-3], images[newIndex-2], images[newIndex-1], images[newIndex]]);
-    slider.style.transform = "translateX(-25%)";
-    slider.style.transition = "transform 0.3s ease-in-out";
-      
+  const onClickHandleRight = () => {
+    setCurrentIndex((prev) => prev + 1);
+  }
+
+  const onClickHandleLeft = () => {
+    setCurrentIndex((prev) => prev - 1);
+  }
+
+  const handleTransitionEnd = () => {
+    if (currentIndex === 0) {
+      sliderRef.current.style.transition = "none";
+      setCurrentIndex(images.length);
+    } else if (currentIndex === images.length + 1) {
+      sliderRef.current.style.transition = "none";
+      setCurrentIndex(1);
     }
-    
-    
-  
+  };
+
+  useEffect(() => {
+    sliderRef.current.style.transition = "transform 0.5s ease-in-out";
+  }, [currentIndex]);
 
 
-return (
-  <div className="container" >
-    <button className="handle left-handle">
-      <div className="text left-handle">&#129088;</div>
-    </button>
-    <div ref={sliderRef} className='slider'>
-      {showCase.map((one:string, index:number) => {
-        return (
-          <img key={index} src={one} alt={one} />
-        )
-      })}
+  return (
+    <div className="container" >
+      <button className="handle left-handle" onClick={onClickHandleLeft}>
+        <div className="text left-handle">&#129088;</div>
+      </button>
+      <div ref={sliderRef} className='slider' 
+      style={{
+        display: "flex",
+        transform: `translateX(-${currentIndex * 100}%)`,
+      }}
+      onTransitionEnd={handleTransitionEnd}
+      >
+        {extendedSlides.map((one: string, index: number) => {
+          return (
+            <img key={index} src={one} alt={one} />
+          )
+        })}
+      </div>
+      <button className="handle right-handle" onClick={onClickHandleRight}>
+        <div className="text right-handle">&#129090;</div>
+      </button>
     </div>
-    <button className="handle right-handle" onClick={onClickHandleRight}>
-      <div className="text right-handle">&#129090;</div>
-    </button>
-  </div>
-);
+  );
 };
 
 export default Carousel

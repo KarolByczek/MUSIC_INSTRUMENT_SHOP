@@ -53,7 +53,11 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
   };
 
   useEffect(() => {
-    sliderRef.current.style.transition = "transform 0.5s ease-in-out";
+    if (currentIndex === 0) {
+      setTimeout(() => setCurrentIndex(images.length), 0);
+    } else if (currentIndex === images.length + 1) {
+      setTimeout(() => setCurrentIndex(1), 0);
+    }
   }, [currentIndex]);
 
 
@@ -65,7 +69,8 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
       <div ref={sliderRef} className='slider' 
       style={{
         display: "flex",
-        transform: `translateX(-${currentIndex * 100}%)`,
+        transform: `translateX(-${currentIndex * 50}%)`,
+        transition: currentIndex === 0 || currentIndex === images.length + 1 ? "none" : "transform 0.5s ease-in-out"
       }}
       onTransitionEnd={handleTransitionEnd}
       >

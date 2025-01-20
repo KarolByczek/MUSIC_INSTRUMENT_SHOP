@@ -7,7 +7,9 @@ interface CarouselProps {
 const Carousel: React.FC<CarouselProps> = ({ slides }) => {
 
   const [currentIndex, setCurrentIndex] = useState(1); // Start at 1 because of clones
-  const [isTransitioning, setIsTransitioning] = useState(false); // Prevent double actions
+  const [isTransitioning, setIsTransitioning] = useState<boolean>(false); // Prevent double actions
+  const [isDragging, setIsDragging] = useState<boolean>(false);
+  const [startPosition, setStartPosition] = useState<number>(0);
   const sliderRef = useRef(null);
   const totalSlides = slides.length;
 
@@ -34,7 +36,7 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
   };
 
   useEffect(() => {
-    const slider:any = sliderRef.current;
+    const slider: any = sliderRef.current;
 
     const teleport = () => {
       if (currentIndex === 0) {
@@ -47,6 +49,11 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
         setCurrentIndex(1);
       }
     };
+
+    setTimeout(() => {
+      slider.style.transition = "transform 0.5s ease-in-out";
+      setIsTransitioning(false);
+    }, 0);
 
     // Trigger teleport after the transition completes
     const handleTransitionEnd = () => {
@@ -65,22 +72,46 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
 
   // Re-enable transition after teleport
   useEffect(() => {
-    const slider:any = sliderRef.current;
+    const slider: any = sliderRef.current;
     if (slider.style.transition === "none") {
       // Force reflow to apply transition
       slider.offsetHeight; // Trigger reflow
       slider.style.transition = "transform 0.5s ease-in-out";
     }
-  }, [currentIndex]);
+  }, [currentIndex, totalSlides]);
+
+
+  const handleDragStart = (e:any) => {
+    setStartPosition(e.clientX);
+    setIsDragging(true);
+  };
+
+  const handleDragMove = (e:any) => {
+    if (!isDragging) return;
+    const delta = e.clientX - startPosition;
+    const direction = delta > 0 ? "right" : "left";
+
+    if (direction === "left") handleNext();
+    if (direction === "right") handlePrev();
+
+    setIsDragging(false); // Reset drag state after one action
+  };
+
+  const handleDragEnd = () => {
+    setIsDragging(false);
+  };
 
   return (
-    <div className="carousel">
+    <div className="carousel" onMouseDown={(e) => {handleDragStart(e); e.preventDefault();}}
+      onMouseMove={handleDragMove}
+      onMouseUp={handleDragEnd} onTouchMove={(e) => e.preventDefault()}>
       <button className="slider_button" onClick={handlePrev}>&#10094;</button>
       <div
         className="carousel-slider"
         ref={sliderRef}
         style={{
           transform: `translateX(-${currentIndex * 33}%)`,
+          transition: `transform 0.3s ease-in-out`
         }}
       >
         {extendedSlides.map((slide, index) => (
@@ -95,3 +126,4 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
 };
 
 export default Carousel;
+

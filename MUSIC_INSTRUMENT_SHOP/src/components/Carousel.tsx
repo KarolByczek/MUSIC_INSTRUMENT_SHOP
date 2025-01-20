@@ -10,7 +10,8 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false); // Prevent double actions
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const [startPosition, setStartPosition] = useState<number>(0);
-  const sliderRef = useRef(null);
+  const sliderRef = useRef<null>(null);
+  const autoSwipeInterval = useRef<any>(null);
   const totalSlides = slides.length;
 
   // Create clones for seamless looping
@@ -56,8 +57,6 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
       }, 0);
     };
 
-
-
     // Trigger teleport after the transition completes
     const handleTransitionEnd = () => {
       teleport();
@@ -71,6 +70,7 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
     return () => {
       slider.removeEventListener("transitionend", handleTransitionEnd);
     };
+
   }, [currentIndex, totalSlides]);
 
   // Re-enable transition after teleport
@@ -104,11 +104,44 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
     setIsDragging(false);
   };
 
+  // Auto-swipe logic
+  useEffect(() => {
+    const slider:any = sliderRef.current;
+
+    const startAutoSwipe = () => {
+      autoSwipeInterval.current = setInterval(() => {
+        handleNext();
+      }, 3000); // 3 seconds
+    };
+
+    const stopAutoSwipe = () => {
+      if (autoSwipeInterval.current) {
+        clearInterval(autoSwipeInterval.current);
+        autoSwipeInterval.current = null;
+      }
+    };
+
+    // Start auto-swipe
+    startAutoSwipe();
+
+    // Stop auto-swipe on user interaction
+    const interactionHandler = () => stopAutoSwipe();
+
+    slider.addEventListener("mousedown", interactionHandler); // Mouse interaction
+    slider.addEventListener("touchstart", interactionHandler); // Touch interaction
+
+    return () => {
+      stopAutoSwipe();
+      slider.removeEventListener("mousedown", interactionHandler);
+      slider.removeEventListener("touchstart", interactionHandler);
+    };
+  }, [handleNext]);
+
   return (
     <div className="carousel" onMouseDown={(e) => { handleDragStart(e); e.preventDefault(); }}
       onMouseMove={handleDragMove}
       onMouseUp={handleDragEnd} onTouchMove={(e) => e.preventDefault()}>
-      <button className="slider_button" onClick={handlePrev}>&#10094;</button>
+      <button className="slider_button" onClick={handlePrev}><span className="text">&#10094;</span></button>
       <div
         className="carousel-slider"
         ref={sliderRef}
@@ -123,7 +156,7 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
           </div>
         ))}
       </div>
-      <button className="slider_button" onClick={handleNext}>&#10095;</button>
+      <button className="slider_button" onClick={handleNext}><span className="text">&#10095;</span></button>
     </div>
   );
 };

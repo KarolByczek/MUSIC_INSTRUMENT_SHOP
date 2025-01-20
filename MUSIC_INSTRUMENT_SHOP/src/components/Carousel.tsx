@@ -48,12 +48,15 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
         slider.style.transition = "none";
         setCurrentIndex(1);
       }
+
+      setTimeout(() => {
+        // Re-enable transition for the next move
+        slider.style.transition = "transform 0.5s ease-in-out";
+        setIsTransitioning(false); // Allow future interactions
+      }, 0);
     };
 
-    setTimeout(() => {
-      slider.style.transition = "transform 0.5s ease-in-out";
-      setIsTransitioning(false);
-    }, 0);
+
 
     // Trigger teleport after the transition completes
     const handleTransitionEnd = () => {
@@ -81,12 +84,12 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
   }, [currentIndex, totalSlides]);
 
 
-  const handleDragStart = (e:any) => {
+  const handleDragStart = (e: any) => {
     setStartPosition(e.clientX);
     setIsDragging(true);
   };
 
-  const handleDragMove = (e:any) => {
+  const handleDragMove = (e: any) => {
     if (!isDragging) return;
     const delta = e.clientX - startPosition;
     const direction = delta > 0 ? "right" : "left";
@@ -102,7 +105,7 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
   };
 
   return (
-    <div className="carousel" onMouseDown={(e) => {handleDragStart(e); e.preventDefault();}}
+    <div className="carousel" onMouseDown={(e) => { handleDragStart(e); e.preventDefault(); }}
       onMouseMove={handleDragMove}
       onMouseUp={handleDragEnd} onTouchMove={(e) => e.preventDefault()}>
       <button className="slider_button" onClick={handlePrev}>&#10094;</button>

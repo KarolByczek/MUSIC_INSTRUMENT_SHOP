@@ -366,15 +366,16 @@ h1 span {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 300px; /* Adjust as needed */
+  margin: 0;
   touch-action: pan-y; /* Prevent scroll conflicts */
 }
 
 .carousel-slider {
   width: 100%;
   display: flex;
-  margin: 0.5%;
+  margin: 0 0.5%;
   cursor: grab; 
+  gap: 1rem;
 }
 
 .carousel-slider:active {
@@ -382,14 +383,14 @@ h1 span {
 }
 
 .carousel-slide {
-  width: 33%;
-  flex: 0 0 33%;
-  
+  width: 50%;
+  flex: 0 0 50%;
+  border-radius: 2rem;
 }
 
 .carousel-slide img {
   width: 100%;
-  height: auto;
+  height: 100%;
   aspect-ratio: 16/9;
 }
 
@@ -397,7 +398,6 @@ h1 span {
   position: absolute;
   top: 0;
   height: 100%;
-  margin: 0;
   background: rgba(151, 15, 15, 0.5);
   border: none;
   font-size: 24px;
@@ -411,15 +411,16 @@ h1 span {
   background:rgba(219, 84, 84, 0.87);
 }
 
+.slider_button .text {
+  font-size: 1.5rem;
+  transition: all 0.3 ease-in-out;
+}
+
 .slider_button:hover .text {
   font-size: 2rem;
   transition: all 0.3s ease-in-out;
 }
 
-.slider_button .text {
-  font-size: 1.5rem;
-  transition: all 0.3 ease-in-out;
-}
 
 .slider_button .text:hover {
   font-size: 2rem
@@ -427,8 +428,12 @@ h1 span {
 
 .slider_button:first-of-type {
   left: 0;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .slider_button:last-of-type {
   right: 0;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }

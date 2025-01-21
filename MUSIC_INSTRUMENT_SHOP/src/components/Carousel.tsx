@@ -146,7 +146,7 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
         className="carousel-slider"
         ref={sliderRef}
         style={{
-          transform: `translateX(-${currentIndex * 33}%)`,
+          transform: `translateX(-${currentIndex * 50}%)`,
           transition: `transform 0.3s ease-in-out`
         }}
       >

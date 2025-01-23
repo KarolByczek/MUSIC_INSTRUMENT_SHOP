@@ -416,7 +416,7 @@ h1 span {
 }
 
 .slider_button:hover {
-  background:rgb(25, 24, 24);
+  background:rgb(25, 24, 24, 1);
 }
 
 .slider_button .text {
@@ -432,6 +432,10 @@ h1 span {
 
 .slider_button .text:hover {
   font-size: 2rem
+}
+
+.slider_button:active .text {
+  font-size: 2.5rem;
 }
 
 .slider_button:first-of-type {

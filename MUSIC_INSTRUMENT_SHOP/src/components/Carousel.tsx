@@ -1,10 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
+import { carouselURLsDb } from "../../../AUXILIARY_OBJECTS/carouselURLs.tsx"
+import { collection, DocumentData, getDocs } from "firebase/firestore";
 
-interface CarouselProps {
-  slides: string[];
-}
 
-const Carousel: React.FC<CarouselProps> = ({ slides }) => {
+const Carousel: React.FC = () => {
 
   const [currentIndex, setCurrentIndex] = useState(1); // Start at 1 because of clones
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false); // Prevent double actions
@@ -12,16 +11,35 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
   const [startPosition, setStartPosition] = useState<number>(0);
   const sliderRef = useRef<null>(null);
   const autoSwipeInterval = useRef<any>(null);
-  const totalSlides = slides.length;
+  const [dbdata, setDbdata] = useState([]);
+  const totalSlides = dbdata.length;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const querySnapshot:DocumentData = await getDocs(collection(carouselURLsDb, 'CarouselURLs'));
+        const initArray:[] = []; // Create a new array for storing fetched data
+        querySnapshot.forEach((doc:any) => {
+          console.log(doc.id, ' => ', doc.data()); // Log data for debugging
+          initArray.push(doc.data()); // Push document data, not the entire doc object
+        });
+        setDbdata(initArray); // Update state with fetched data
+      } catch (error) {
+        console.error("Error fetching Firestore data: ", error);
+      }
+    };
+
+    fetchData(); // Call the async function to fetch data
+  }, [setDbdata]); // Empty dependency array, runs only once after component mounts
 
   // Create clones for seamless looping
   const extendedSlides = [
-    slides[slides.length - 1], // Clone last slide at the beginning
-    ...slides,
-    slides[0], // Clone first slide at the end
-    slides[1],
-    slides[2],
-    slides[3]
+    dbdata[dbdata.length - 1], // Clone last slide at the beginning
+    ...dbdata,
+    dbdata[0], // Clone first slide at the end
+    dbdata[1],
+    dbdata[2],
+    dbdata[3]
   ];
 
   const handleNext = () => {
